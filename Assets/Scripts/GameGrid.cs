@@ -11,6 +11,7 @@ public class GameGrid : MonoBehaviour
     [SerializeField] private QuestionController questionController;
     [SerializeField] private SessionController sessionController;
     [SerializeField] private Cell cellPrefab;
+    [SerializeField] private GameObject confettiPrefab;
 
     private Transform m_Transform;
     private Cell[] cells;
@@ -28,8 +29,17 @@ public class GameGrid : MonoBehaviour
         m_Transform = transform;
     }
 
-    private void OnRightAnswer(string id) => FindCellWithID(id).TweenRight();
-    private void OnWrongAnswer(string id) => FindCellWithID(id).TweenWrong();
+    private void OnRightAnswer(string id)
+    {
+        Cell cell = FindCellWithID(id);
+        cell.TweenRight();
+        Instantiate(confettiPrefab, cell.transform.position, Quaternion.identity);
+    }
+
+    private void OnWrongAnswer(string id)
+    {
+        FindCellWithID(id).TweenWrong();
+    }
 
     private void ClearGrid()
     {

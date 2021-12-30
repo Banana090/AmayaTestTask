@@ -1043,6 +1043,8 @@ MonoBehaviour:
   sessionController: {fileID: 467439214}
   cellPrefab: {fileID: 4971683229987016971, guid: 6d15f477e390b25429fabd8ef2c563fe,
     type: 3}
+  confettiPrefab: {fileID: 423330513048046401, guid: 99d5e39201ee31142b4141a8dc50b9f3,
+    type: 3}
 --- !u!1 &2090227007
 GameObject:
   m_ObjectHideFlags: 0
